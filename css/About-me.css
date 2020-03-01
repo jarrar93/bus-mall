@@ -1,0 +1,308 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+ html { 
+    background: url(../img/html.gif) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+ header{
+    
+    background: url(../img/header.jpg);
+    border: 1px solid #afafaf;
+    opacity: 88%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+header h1{
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+} 
+main ul li{
+    list-style: inside;
+}
+
+nav ul li a{
+    color: rgb(255, 0, 0);
+    text-decoration: none ;
+    font-size: 20px;   
+}
+nav ul li a:hover{
+color: rgb(170, 238, 255);
+
+border: #b9fffb solid 3px;
+
+}
+nav ul li {
+    display: inline-block;
+    padding: 0 20px;
+    margin: 30px 20px 5px;
+}
+
+footer {
+    background-color: rgb(235, 124, 60);
+    padding: 15px 23px;
+    border: 2px solid #bcb9b9;
+    text-align: center;
+}
+main{
+    height: 289px;
+    margin: 20px 0;
+    padding: 10px 23px;
+}
+main h1 {
+    color:rgb(255, 73, 73);
+    font-size: 25px;
+
+}   
+#first{
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+}
+#A{
+    /* Iam Abdallah Obaid */
+    text-align: center;
+    color: #04551c;
+    font-family: "Times New Roman", Times, serif;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+ #personal-img{
+    width: 15%;
+    display: block;
+    float: right;
+    position: sticky;
+    top: 0;
+}
+
+header nav ul {
+    list-style: decimal;
+    text-align: center;
+    margin-left: 150px;
+}
+#Myedu {
+padding-top: 20px;    
+padding-left: 20px;
+padding-bottom: 10px;
+margin-right: 100px;
+margin-left: 50px;
+background-color: #defcef ;
+border-radius: 40px 0 40px 0;
+}
+#Experience {
+padding-top: 20px;    
+padding-left: 20px;
+padding-bottom: 10px;
+margin-left: 100px;
+margin-right: 50px;
+background-color: #cbf8f6 ;
+border-radius: 40px 0 40px 0;
+}
+#hobby {
+padding-top: 20px;    
+padding-left: 20px;
+padding-bottom: 10px;
+margin-right: 100px;
+margin-left: 50px;
+background-color: #b9fffb ;
+border-radius: 40px 0 40px 0;
+}
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+/* html, body { background: #333 url("https://codepen.io/images/classy_fabric.png"); } */
+
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 210px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 210px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    border-radius:70px 0 70px 0 ;
+}
+
+.nav label {
+    width: auto;
+    height: 100%;
+    display: none;
+    position: absolute;
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+    transition: opacity .2s;
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    /* line-height: 380px; */
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow:  0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+    width: 100%;
+    bottom: 9px;
+    height: 11px;
+    display: block;
+    position: absolute;
+    top: 200px;
+    text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+	background: rgba(0, 0, 0, 0.8);
+}
+#by{
+    list-style: outside none none;
+    position: absolute;
+    top: 1180px;
+    left: calc(50% - 160px);
+    margin-left: 9px;
+    padding: 0;
+  }
+  
+  #by li{
+    float: left;
+    margin-left: 20px;
+    position: relative;
+  }
+  
+  .boxx{
+    width: 35px;
+    height: 35px;
+    background-color: #b3b3b3;
+    border-radius: 2px;
+    transition: transform 0.25s ease;
+  }
+  
+  .boxx:hover{
+    transform: rotateZ(405deg);
+  }
+  
+  .linkedin:hover{
+    background-color: #2771f2;
+    opacity: 0.7;
+  }
+  
+  .twitter:hover{
+    background-color: #8eb4f5;
+    opacity: 0.7;
+  }
+  
+  .github:hover{
+    background-color: #fcb346;
+    opacity: 0.7;
+  }
+  
+  .dribbble:hover{
+    background-color: #f26f9f;
+    opacity: 0.7;
+  }
+  
+  .vine:hover{
+    background-color: #28cc19;
+    opacity: 0.7;
+  }
+  
+  #by li::after{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 35px;
+    height: 35px;
+    transition: transform 0.25s ease;
+  }
+  
+  .linkedin::after{
+    content: url("https://i.imgur.com/9LsMegp.png");
+  }
+  
+  .twitter::after{
+    content: url("https://i.imgur.com/NkiB9d3.png");
+  }
+  
+  .github::after{
+    content: url("https://i.imgur.com/cudAAIe.png");
+  }
+  
+  .dribbble::after{
+    content: url("https://i.imgur.com/dolilQV.png");
+  }
+  
+  .vine::after{
+    content: url("https://i.imgur.com/eNQDbVG.png");
+  }
+  
+  li:hover::after{
+    transform: rotateZ(-405deg);
+  }
