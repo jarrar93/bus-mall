@@ -12,25 +12,28 @@ header {
   position: sticky;
   top: 0;
   z-index: 9999;
-  border-style: solid;
-  border-width:2px;
-  border-color: #77cee3;
-  border: #77cee3;
+  border: 2px solid #FFC981;
 }
 header h1{
-  margin-bottom: -10%;
+  padding: 3px ;
   float: left;
-  border-style: solid;
-  border: #77cee3;
+  font-size: 40px;
 }
 header li{
+  margin-left: 30px;
   display: inline-block;
-  padding: 2%;
+  padding-left: 1%;
   font-size: 175%;
 }
+main h1{
+  color: #0e2805;
+  font-size: 25px;
+  margin-bottom: 4px;
+}
 main section ul li img{
- width: 20%;
- margin-top: 5%;
+  height: 200px;
+  width: 20%;
+  margin-top: 9%;
 } 
 main section ul li {
  display: inline;
@@ -45,19 +48,23 @@ main section{
  text-align: center;
 }
 #list{
- margin-top: 2%;
- width: 250px;
- border-style: solid;
- border: #77cee3;
- padding-bottom: 5%;
- float: left;
- border: 2px solid #FFC981;
- color: brown;
+  margin-top: 2%;
+  margin-left: 3%;
+  width: 332px;
+  border-style: solid;
+  padding-bottom: 5%;
+  float: left;
+  border: 2px solid #FFC981;
+  color: brown;
+  padding-top: 2%;
 }
+#list ul li{
+display: block;
+ }
 
 #lorem {
-  margin-top: 5%;
-  margin-left: 5%;
+  margin-top: 8%;
+  margin-left: 9%;
   text-align: center;
   width: 700px;
   height: 275px;
@@ -74,11 +81,12 @@ footer{
   margin-top: 64%;
   height: 50px;
   padding-top: 25px;
-
+  border: 2px solid #FFC981;
 }
 #barchart{
-  width: 30%;
+  width: 32.7%;
   position: absolute;
   top: 22%;
   right: 25%;
+  z-index: -1;
 }
