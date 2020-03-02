@@ -55,24 +55,30 @@ main section{
  color: brown;
 }
 
-#lorem{
-margin-top: 5%;
-margin-left: 5%;
-text-align: center;
-width: 700px;
-height: 275px;
-border: 2px solid #FFC981;
-color: brown;
-position: absolute;
-top: auto;
-left: 25%;
+#lorem {
+  margin-top: 5%;
+  margin-left: 5%;
+  text-align: center;
+  width: 700px;
+  height: 275px;
+  border: 2px solid #FFC981;
+  color: brown;
+  position: absolute;
+  top: 75%;
+  left: 25%;
 }
 
 footer{
-background-color: #685353;
-text-align: center;
-margin-top: 35%;
-height: 50px;
-padding-top: 25px;
+  background-color: #685353;
+  text-align: center;
+  margin-top: 64%;
+  height: 50px;
+  padding-top: 25px;
 
+}
+#barchart{
+  width: 30%;
+  position: absolute;
+  top: 22%;
+  right: 25%;
 }
