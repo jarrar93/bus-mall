@@ -1,5 +1,5 @@
 //Global
-var productImg=['bag','banana','bathroom','boots','breakfast','bubblegum','chair','cthulhu','dog-duck','dragon','pen','pet-sweep','shark','sweep','tauntaun','unicorn','usb','water-can','wine-glass']
+var productImg=['bag.jpg','banana.jpg','bathroom.jpg','boots.jpg','breakfast.jpg','bubblegum.jpg','chair.jpg','cthulhu.jpg','dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','shark.jpg','sweep.png','tauntaun.jpg','unicorn.jpg','usb.gif','water-can.jpg','wine-glass.jpg']
 var leftProImage = document.querySelector('#pro1img');
 var rightProImage = document.querySelector('#pro2img');
 var centerProImage = document.querySelector('#pro3img');
@@ -9,7 +9,7 @@ var totalClicks = 1
 
 function Products(name){
 this.name = name;
-this.urlImg = `img/${this.name}.jpg`;
+this.urlImg = `img/${this.name}`;
 this.totalClickspro = 0;
 this.totalCount = 0 ;
 product.push(this);//this its refer to the object that im created
@@ -27,9 +27,9 @@ function randomImg(){
     centerProImage.setAttribute('alt' ,centerPro3Random.name);
   while((leftProRandom.name === righPro2Random.name)||(leftProRandom.name === centerPro3Random.name)||(centerPro3Random.name === righPro2Random.name)){
     //pick another random number
-    var leftProRandom = product[randomNumber(0,product.length -1)]
-    var righPro2Random = product[randomNumber(0,product.length-1)]
-    var centerPro3Random = product[randomNumber(0,product.length-1)]
+    var leftProRandom = product[randomNumber(0,product.length- 1)]
+    var righPro2Random = product[randomNumber(0,product.length- 1)]
+    var centerPro3Random = product[randomNumber(0,product.length- 1)]
     leftProImage.setAttribute('src' , leftProRandom.urlImg);
     leftProImage.setAttribute('alt' , leftProRandom.name);
     rightProImage.setAttribute('src' , righPro2Random.urlImg);
