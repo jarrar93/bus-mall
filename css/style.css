@@ -13,6 +13,7 @@ body {
     top: 0;
     z-index: 9999;
     border-style: solid;
+    border-width:2px;
     border-color: #77cee3;
     border: #77cee3;
   }
@@ -34,6 +35,9 @@ body {
    display: inline;
   
  }
+ /* main section ul {
+  border: 2px solid #FFC981;
+} */
  #top{
    float: right;
  }
@@ -46,24 +50,30 @@ body {
    width: 250px;
    border-style: solid;
    border: #77cee3;
-   padding-bottom: 30%;
-   float: left;}
+   padding-bottom: 5%;
+   float: left;
+   border: 2px solid #FFC981;
+   color: brown;
+  }
 
  #lorem{
    margin-top: 5%;
-   margin-left: 2%;
+   margin-left: 5%;
    
    float: right;
    float: left;
    text-align: center;
    width: 700px;
-   height: 300px;
+   height: 275px;
+   border: 2px solid #FFC981;
+   color: brown;
  }
  
  footer{
   background-color: #685353;
   text-align: center;
-  margin-top: 30%;
+  margin-top: 35%;
   height: 50px;
   padding-top: 25px;
+  
 }
