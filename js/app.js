@@ -5,6 +5,7 @@ var rightProImage = document.querySelector('#pro2img');
 var centerProImage = document.querySelector('#pro3img');
 var groupImageSection = document.getElementById('all_Pro');
 var product=[];
+var noRepeat=[];
 var totalClicks = 1
 
 function Products(name){
@@ -17,29 +18,38 @@ product.push(this);//this its refer to the object that im created
 
 function randomImg(){
     var leftProRandom = product[randomNumber(0,product.length - 1)]
-    var righPro2Random = product[randomNumber(0,product.length - 1)]
+    var rightPro2Random = product[randomNumber(0,product.length - 1)]
     var centerPro3Random = product[randomNumber(0,product.length - 1)]
     leftProImage.setAttribute('src' , leftProRandom.urlImg);
     leftProImage.setAttribute('alt' , leftProRandom.name);
-    rightProImage.setAttribute('src' , righPro2Random.urlImg);
-    rightProImage.setAttribute('alt' ,righPro2Random.name);
+    rightProImage.setAttribute('src' , rightPro2Random.urlImg);
+    rightProImage.setAttribute('alt' ,rightPro2Random.name);
     centerProImage.setAttribute('src' , centerPro3Random.urlImg);
     centerProImage.setAttribute('alt' ,centerPro3Random.name);
-  while((leftProRandom.name === righPro2Random.name)||(leftProRandom.name === centerPro3Random.name)||(centerPro3Random.name === righPro2Random.name)){
+  while((leftProRandom.name === rightPro2Random.name)||
+        (leftProRandom.name === centerPro3Random.name)||
+        (centerPro3Random.name === rightPro2Random.name)||
+        (noRepeat.includes(leftProRandom.name))||
+        (noRepeat.includes(rightPro2Random.name))||
+        (noRepeat.includes(centerPro3Random.name))){
     //pick another random number
     var leftProRandom = product[randomNumber(0,product.length- 1)]
-    var righPro2Random = product[randomNumber(0,product.length- 1)]
+    var rightPro2Random = product[randomNumber(0,product.length- 1)]
     var centerPro3Random = product[randomNumber(0,product.length- 1)]
     leftProImage.setAttribute('src' , leftProRandom.urlImg);
     leftProImage.setAttribute('alt' , leftProRandom.name);
-    rightProImage.setAttribute('src' , righPro2Random.urlImg);
-    rightProImage.setAttribute('alt' ,righPro2Random.name);
+    rightProImage.setAttribute('src' , rightPro2Random.urlImg);
+    rightProImage.setAttribute('alt' ,rightPro2Random.name);
     centerProImage.setAttribute('src' , centerPro3Random.urlImg);
     centerProImage.setAttribute('alt' ,centerPro3Random.name);
+    
   }
+  noRepeat = [];
+  noRepeat.push(leftProRandom.name,rightPro2Random.name,centerPro3Random.name);
   leftProRandom.totalCount += 1;
-  righPro2Random.totalCount += 1;
+  rightPro2Random.totalCount += 1;
   centerPro3Random.totalCount += 1;
+
 }
 for(var i = 0; i<productImg.length;i++ ){
   new Products(productImg[i]); 
@@ -57,7 +67,7 @@ function clickImage(e){
     totalClicks = totalClicks +  1; 
   }
   if(totalClicks ===25){
-    // groupImageSection.removeEventListener('click' , clickImage)
+    groupImageSection.removeEventListener('click' , clickImage)
     leftProImage.remove()
     rightProImage.remove()
     centerProImage.remove()
