@@ -12,7 +12,7 @@ function Products(name){
 this.name = name;
 this.urlImg = `img/${this.name}`;
 this.totalClickspro = 0;
-this.totalCount = 0 ;
+this.totalCountViews = 0 ;
 product.push(this);//this its refer to the object that im created
 }
 
@@ -46,9 +46,9 @@ function randomImg(){
   }
   noRepeat = [];
   noRepeat.push(leftProRandom.name,rightPro2Random.name,centerPro3Random.name);
-  leftProRandom.totalCount += 1;
-  rightPro2Random.totalCount += 1;
-  centerPro3Random.totalCount += 1;
+  leftProRandom.totalCountViews += 1;
+  rightPro2Random.totalCountViews += 1;
+  centerPro3Random.totalCountViews += 1;
 
 }
 for(var i = 0; i<productImg.length;i++ ){
@@ -90,7 +90,7 @@ var ulel = document.createElement('ul');
 list.appendChild(ulel);
 for(var i = 0 ; i < product.length ; i ++){
   var liel = document.createElement('li');
-  liel.textContent = `${product[i].name} had ${product[i].totalClickspro} votes and was shown ${product[i].totalCount} times`
+  liel.textContent = `${product[i].name} had ${product[i].totalClickspro} votes and was shown ${product[i].totalCountViews} times`
   ulel.appendChild(liel)
 }
 }
@@ -99,15 +99,18 @@ for(var i = 0 ; i < product.length ; i ++){
 function renderChartResults(){
   var proNames = [];
   var proClicks = [];
+  var proViews = [];
   for(var i = 0 ; i < product.length ; i++){
     var pronames = product[i].name;
     proNames.push(pronames);
     var pronlicks = product[i].totalClickspro;
     proClicks.push(pronlicks);
+    var proviews = product[i].totalCountViews;
+    proViews.push(proviews);
   }
 console.log(proNames)
 console.log(proClicks)
-
+console.log(proViews)
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
@@ -117,20 +120,92 @@ var myChart = new Chart(ctx, {
             label: '# of Votes',
             data: proClicks,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)'
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+              'rgba(255, 206, 86, 0.7)'
+            ],},{
+            label: '# of Views',
+            data: proViews,
+            backgroundColor: [
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)'
+
+            ],
+            borderColor: [
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)',
+              'rgba(153, 102, 255, 0.7)'
+
             ],
             borderWidth: 1
         }]
