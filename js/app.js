@@ -1,3 +1,4 @@
+'use strict';
 //Global
 var productImg=['bag.jpg','banana.jpg','bathroom.jpg','boots.jpg','breakfast.jpg','bubblegum.jpg','chair.jpg','cthulhu.jpg','dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','shark.jpg','sweep.png','tauntaun.jpg','unicorn.jpg','usb.gif','water-can.jpg','wine-glass.jpg']
 var leftProImage = document.querySelector('#pro1img');
@@ -6,7 +7,7 @@ var centerProImage = document.querySelector('#pro3img');
 var groupImageSection = document.getElementById('all_Pro');
 var product=[];
 var noRepeat=[];
-var totalClicks = 1
+var totalClicks = 1; // to stop the prossess after 25 click
 
 function Products(name){
 this.name = name;
@@ -16,6 +17,7 @@ this.totalCountViews = 0 ;
 product.push(this);//this its refer to the object that im created
 }
 
+//Random image:----------->
 function randomImg(){
     var leftProRandom = product[randomNumber(0,product.length - 1)]
     var rightPro2Random = product[randomNumber(0,product.length - 1)]
@@ -42,31 +44,32 @@ function randomImg(){
     rightProImage.setAttribute('alt' ,rightPro2Random.name);
     centerProImage.setAttribute('src' , centerPro3Random.urlImg);
     centerProImage.setAttribute('alt' ,centerPro3Random.name);
-    
   }
   noRepeat = [];
   noRepeat.push(leftProRandom.name,rightPro2Random.name,centerPro3Random.name);
   leftProRandom.totalCountViews += 1;
   rightPro2Random.totalCountViews += 1;
   centerPro3Random.totalCountViews += 1;
-
+  setItem()
 }
+
 for(var i = 0; i<productImg.length;i++ ){
   new Products(productImg[i]); 
 }
+
+getItem();
 randomImg();
-console.log(product);
+
 function clickImage(e){
-  for (var i = 0 ; i < product.length ; i++){
+ totalClicks = totalClicks +  1; 
+
+ for (var i = 0 ; i < product.length ; i++){
     if (product[i].name === e.target.alt){
       product[i].totalClickspro += 1;
     }
   }
-  if((e.target.id ==='pro1img')||(e.target.id ==='pro2img')||(e.target.id ==='pro3img')){
-    randomImg();
-    totalClicks = totalClicks +  1; 
-  }
-  if(totalClicks ===25){
+
+ if(totalClicks == 26){
     groupImageSection.removeEventListener('click' , clickImage)
     leftProImage.remove()
     rightProImage.remove()
@@ -75,6 +78,11 @@ function clickImage(e){
     renderFinsh()
     alert('finished')
     renderChartResults()
+    return;
+  };
+
+ if((e.target.id ==='pro1img')||(e.target.id ==='pro2img')||(e.target.id ==='pro3img')){
+    randomImg();
   }
 }
 
@@ -112,6 +120,7 @@ console.log(proNames)
 console.log(proClicks)
 console.log(proViews)
 var ctx = document.getElementById('myChart').getContext('2d');
+//chart render:----------->
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -220,3 +229,19 @@ var myChart = new Chart(ctx, {
         }
     }
 });}
+
+//update drinks
+function setItem(){
+var SetPro = JSON.stringify(product);
+localStorage.setItem('proDuct1', SetPro);
+}
+
+//get all drinks
+function getItem(){
+var proDuct1 = localStorage.getItem('proDuct1');
+  if (JSON.parse(proDuct1) != null){
+    product = JSON.parse(proDuct1)
+  }
+}
+// Add an event listener to the submit button
+groupImageSection.addEventListener('click' , clickImage);
