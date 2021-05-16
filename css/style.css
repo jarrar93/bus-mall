@@ -1,0 +1,21 @@
+#contner div {
+ background-color: rgb(251, 251, 251);
+ width: 100%;
+ display: inline-block;
+
+}
+body{
+
+background-color: aqua ;
+
+}
+#product1{
+   width: 600px;
+  height: 600px;
+  height: 600px;
+}
+#product2{ width: 600px;
+  height: 600px;}
+
+#product3{ width: 600px;
+  height: 600px;}
