@@ -1,21 +1,92 @@
-#contner div {
- background-color: rgb(251, 251, 251);
- width: 100%;
- display: inline-block;
+
+body {
+  background: radial-gradient(#e6e6e6) fixed;
+  color: #0e2805;
+}
+
+
+header {
+  background: #685353;
+  width: 100%;
+  padding: 17px 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  border: 2px solid #FFC981;
+}
+header h1{
+  padding: 3px ;
+  float: left;
+  font-size: 40px;
+}
+header li{
+  margin-left: 30px;
+  display: inline-block;
+  padding-left: 1%;
+  font-size: 175%;
+}
+main h1{
+  color: #0e2805;
+  font-size: 25px;
+  margin-bottom: 4px;
+}
+main section ul li img{
+  height: 200px;
+  width: 20%;
+  margin-top: 9%;
+} 
+main section ul li {
+ display: inline;
 
 }
-body{
 
-background-color: aqua ;
-
+#top{
+ float: right;
 }
-#product1{
-   width: 600px;
-  height: 600px;
-  height: 600px;
-}
-#product2{ width: 600px;
-  height: 600px;}
 
-#product3{ width: 600px;
-  height: 600px;}
+main section{
+ text-align: center;
+}
+#list{
+  margin-top: 2%;
+  margin-left: 3%;
+  width: 332px;
+  border-style: solid;
+  padding-bottom: 5%;
+  float: left;
+  border: 2px solid #FFC981;
+  color: brown;
+  padding-top: 2%;
+}
+#list ul li{
+display: block;
+ }
+
+#lorem {
+  margin-top: 8%;
+  margin-left: 9%;
+  text-align: center;
+  width: 700px;
+  height: 275px;
+  border: 2px solid #FFC981;
+  color: brown;
+  position: absolute;
+  top: 75%;
+  left: 25%;
+}
+
+footer{
+  background-color: #685353;
+  text-align: center;
+  margin-top: 64%;
+  height: 50px;
+  padding-top: 25px;
+  border: 2px solid #FFC981;
+}
+#barchart{
+  width: 32.7%;
+  position: absolute;
+  top: 22%;
+  right: 25%;
+  z-index: -1;
+}
